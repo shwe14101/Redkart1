@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import hosturl from '../src/Components/host/hosturl';
+//import hosturl from '../src/Components/host/hosturl';
 
 import Header from './Components/Header/Header';
 
@@ -33,7 +33,7 @@ function App() {
 
 
    
-   axios.post(`${hosturl}/cart`, product)
+   axios.post(`http://localhost:3000/cart`, product)
       .then(function(res) {
         console.log(res.data);
         
