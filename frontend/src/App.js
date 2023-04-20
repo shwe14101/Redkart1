@@ -33,7 +33,7 @@ function App() {
 
 
    
-   axios.post(`http://localhost:3000/cart`, product)
+   axios.post(`http://localhost:5000/cart`, product)
       .then(function(res) {
         console.log(res.data);
         
