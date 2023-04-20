@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import './cart.css';
 import ProductCard from './prdcard';
-import {hosturl} from '../host/hosturl';
+//import {hosturl} from '../host/hosturl';
 import axios from "axios";
 //import Cartprds from '../../../../backend/models/cart'
 import Productdisplay from './productsdisplay';
@@ -12,7 +12,7 @@ const Cart = ({ cart, setCart, handleChange, handleClick }) =>{
 
   useEffect(() => {
 
-    axios.get(`${hosturl}/cart`)
+    axios.get(`http://localhost:3000/cart`)
       .then(res =>{
         console.log(res);
         setCart(res.data);
@@ -30,7 +30,7 @@ const Cart = ({ cart, setCart, handleChange, handleClick }) =>{
     useEffect(() => {
       function fetchsave(){
 
-      axios.get(`${hosturl}/saveforlater`)
+      axios.get(`http://localhost:3000/saveforlater`)
         .then(res =>{
           console.log(res);
           setSaveforLater(res.data);
@@ -46,7 +46,7 @@ const Cart = ({ cart, setCart, handleChange, handleClick }) =>{
     // setSaveforLater([...saveforlater, product]);
     // console.log(saveforlater);
 
-    axios.post(`${hosturl}/saveforlater`, product)
+    axios.post(`http://localhost:3000/saveforlater`, product)
     .then(function(res) {
       console.log(res.data);
     })
@@ -59,7 +59,7 @@ const Cart = ({ cart, setCart, handleChange, handleClick }) =>{
 
     
     handleRemove(product._id);
-    axios.get(`${hosturl}/saveforlater`)
+    axios.get(`http://localhost:3000/saveforlater`)
         .then(res =>{
           console.log(res);
           setSaveforLater(res.data);
@@ -70,7 +70,7 @@ const Cart = ({ cart, setCart, handleChange, handleClick }) =>{
  
     const handleRemove = (id) => {
       const arr = cart.filter((product) => product._id !== id); 
-      axios.delete(`${hosturl}/cart/${id}`)  
+      axios.delete(`http://localhost:3000/cart/${id}`)  
       .then(res => {  
   
          //const arr = cart.filter((product) => product.id !== id); 
@@ -91,7 +91,7 @@ const Cart = ({ cart, setCart, handleChange, handleClick }) =>{
     const handleRemoveFromSaveLater = (id) => {
         const arr = saveforlater.filter((product) => product._id !== id);
 
-        axios.delete(`${hosturl}/save/${id}`)  
+        axios.delete(`http://localhost:3000/save/${id}`)  
       .then(res => {  
   
          //const arr = cart.filter((product) => product.id !== id); 
@@ -106,7 +106,7 @@ const Cart = ({ cart, setCart, handleChange, handleClick }) =>{
     const handleAddagain = (product) =>{
         
         handleClick(product);
-        axios.get(`${hosturl}/cart`)
+        axios.get(`http://localhost:3000/cart`)
         .then(res =>{
           console.log(res);
           setCart(res.data);
