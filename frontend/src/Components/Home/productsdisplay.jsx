@@ -5,9 +5,11 @@ import axios from 'axios';
 import ProductCard from "./prdcard";
 import Filter from "../Filter/Filterfunctions/Filter";
 import Pagination from "./pagination";
+import {hosturl} from '../host/hosturl';
 import {getProductsByPriceSort, getProductsBySize, getProductsByCategory, getProductsByBrand, getProductsBySearch} from '../Filter/utils';
 import  {useFilter}  from '../Filter/filtercontext';
 import { FilterProvider } from "../Filter/filtercontext";
+
 import '../Filter/utils/index'
 //import { log } from "console";
 
@@ -31,7 +33,7 @@ function Productdisplay  (props) {
   
   
     axios
-    .get(`http://localhost:5000/prod/?page=${page}`)
+    .get(`${hosturl}/prod/?page=${page}`)
     .then((res)=>{
         setProducts(res.data);
     })
