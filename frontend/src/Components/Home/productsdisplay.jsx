@@ -33,7 +33,7 @@ function Productdisplay  (props) {
   
   
     axios
-    .get(`http:localhost:3000/prod/?page=${page}`)
+    .get(`http:localhost:5000/prod/?page=${page}`)
     .then((res)=>{
         setProducts(res.data);
     })
