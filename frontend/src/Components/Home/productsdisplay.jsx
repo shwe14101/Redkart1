@@ -5,7 +5,7 @@ import axios from 'axios';
 import ProductCard from "./prdcard";
 import Filter from "../Filter/Filterfunctions/Filter";
 import Pagination from "./pagination";
-import {hosturl} from '../host/hosturl';
+//import {hosturl} from '../host/hosturl';
 import {getProductsByPriceSort, getProductsBySize, getProductsByCategory, getProductsByBrand, getProductsBySearch} from '../Filter/utils';
 import  {useFilter}  from '../Filter/filtercontext';
 import { FilterProvider } from "../Filter/filtercontext";
@@ -33,7 +33,7 @@ function Productdisplay  (props) {
   
   
     axios
-    .get(`${hosturl}/prod/?page=${page}`)
+    .get(`http:localhost:3000/prod/?page=${page}`)
     .then((res)=>{
         setProducts(res.data);
     })
