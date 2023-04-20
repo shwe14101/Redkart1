@@ -1,0 +1,80 @@
+
+
+.page{
+    padding-right: 20%;
+}
+.block-left{
+    width:25%;
+    height:auto;
+   
+    background-color:white;
+    float:left;
+}
+   
+  .block-right{
+  
+    width:75%;
+    height:auto;
+    background-color:white;
+    float:left;
+    
+  }
+  .column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+    display: flex;
+  }
+
+ 
+
+  /* .item-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+  .card {
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  img {
+    height: 100px;
+    width: auto;
+  } */
+
+  .grid-container {
+    display: grid;
+    background-color: white;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* background-color: #2196F3; */
+    padding: 10px;
+  }
+  /* .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border: 1px solid rgba(0, 0, 0, 0.8); 
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+  } */
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: flex;
+  }
+  
+  /* MEDIA QUERIES FOR 545px <= Resolutions */ 
+  
+  @media (max-width:545px){
+    .block-left{
+      display:block;
+      width:100%;
+    }
+    
+  }
